@@ -119,6 +119,46 @@ Other synchronization options
 
     $ unison -batch
 
+
+Synchronizing via socket
+========================
+
+specify remote root as a socket protocol
+
+socket://remotehost:portnum//absolute/path/of/root
+
+Using multiple unison configurations
+====================================
+
+default shortcut
+
+.. code-block:: bash
+
+    unison default -auto
+
+where default is the default.prf file in ~/.unison directory
+
+
+Other interesting options
+==========================
+
+    - backups/backup -- keep backup copies of all files
+    - fastckeck false -- disable fastcheck
+    - prefer -- choose this replica version for conflicting changes
+
+fastcheck
+=========
+
+Default behaviour -- fast checking on unix and slow checking on windows (Examining the files)
+
+
+prefer
+======
+
+Automatic preference resolution
+
+prefer <root> newer/older
+
 Batch output options
 ====================
 
