@@ -1,4 +1,4 @@
-:data-transition-duration: 2000
+:data-transition-duration: 800
 :skip-help: true
 
 .. title: Synchronizing files with unison
@@ -59,6 +59,14 @@ Software setup
 
 ----
 
+Gui utility
+===========
+
+.. image:: img/unison_sync.png
+
+
+----
+
 Configuration
 =============
 
@@ -109,7 +117,7 @@ Synchronization command
 
 .. code::
 
-    $ unison --auto
+    $ unison -auto
 
 ----
 
@@ -119,9 +127,6 @@ Summary output
 
 .. code::
 
-.. code-block:: bash
-
-    $ unison -auto
     Contacting server...
     Connected [//sync//home/unison/sync -> //workstation//home/alex]
     Looking for changes
@@ -168,7 +173,8 @@ Using multiple unison configurations
 
     $ unison <profile_name> -auto
 
-Where profile name is *.prf file i.e. ~/.unison/default.prf
+Where profile name is '.prf' file i.e. ~/.unison/default.prf
+
 There can be multiple profile files
 
 
@@ -186,8 +192,10 @@ backup option
 fastcheck
 =========
 
-Checking for differences:
-* default  behaviour on linux -- compare timestamps
+Control diff trigger
+
+
+* default  behaviour on linux -- compare timestamps & inodes
 * default behaviouur on windows -- examining the file
 
 Options to control check behaviour
@@ -205,20 +213,21 @@ Automatic reconciliation preference
 
 - prefer <root> newer/older
 
-----
-
-Caveats
-=======
-
-* Files compared by inode number and modtime
-* No understanding of hard links
-
 
 ----
 
 Issues
 ======
 
+* No understanding of hard links
 * Synchronization between different versions of unison is iffy
 * Requires lots of ram to sync the changes.
- * Up to 2GB of RM for large diffs
+
+ * Up to 2GB of RAM for large diffs
+
+
+----
+
+Questions
+=========
+
